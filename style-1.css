@@ -1,0 +1,208 @@
+:root{
+  --nile-deep:#0d3b3e;
+  --nile-mid:#136668;
+  --nile-teal:#1c8c86;
+  --papyrus:#f2e9d8;
+  --papyrus-dark:#e6d8ba;
+  --gold:#c08a2e;
+  --ink:#1c2b2a;
+  --pass:#1c7a4d;
+  --pass-bg:#e3f3e9;
+  --fail:#a3392f;
+  --fail-bg:#fbe8e5;
+  --absent:#6b6357;
+  --absent-bg:#eeeae1;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Tajawal', sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(28,140,134,0.10), transparent 45%),
+    radial-gradient(circle at 100% 20%, rgba(192,138,46,0.10), transparent 40%),
+    var(--papyrus);
+  color:var(--ink);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+.wave-top{
+  width:100%;
+  height:10px;
+  background:linear-gradient(90deg, var(--nile-deep), var(--nile-teal), var(--gold));
+}
+header{
+  padding:44px 20px 30px;
+  text-align:center;
+}
+.eyebrow{
+  font-family:'Cairo', sans-serif;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:0.5px;
+  color:var(--nile-mid);
+  margin-bottom:10px;
+}
+h1{
+  font-family:'Cairo', sans-serif;
+  font-weight:800;
+  font-size:clamp(28px, 5vw, 42px);
+  margin:0 0 8px;
+  color:var(--nile-deep);
+}
+.subtitle{
+  font-size:16px;
+  color:#4a5754;
+  max-width:520px;
+  margin:0 auto;
+  line-height:1.7;
+}
+main{
+  flex:1;
+  width:100%;
+  max-width:640px;
+  margin:0 auto;
+  padding:0 20px 60px;
+}
+.search-card{
+  background:#fffdf8;
+  border:1px solid var(--papyrus-dark);
+  border-radius:18px;
+  padding:28px 24px;
+  box-shadow:0 18px 40px -20px rgba(13,59,62,0.35);
+}
+label{
+  display:block;
+  font-family:'Cairo', sans-serif;
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:10px;
+  color:var(--nile-deep);
+}
+.input-row{
+  display:flex;
+  gap:10px;
+}
+input[type="text"]{
+  flex:1;
+  font-family:'Tajawal', sans-serif;
+  font-size:18px;
+  padding:14px 16px;
+  border-radius:12px;
+  border:1.5px solid var(--papyrus-dark);
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .15s ease;
+}
+input[type="text"]:focus{
+  border-color:var(--nile-teal);
+}
+button{
+  font-family:'Cairo', sans-serif;
+  font-weight:700;
+  font-size:16px;
+  padding:14px 22px;
+  border-radius:12px;
+  border:none;
+  background:var(--nile-deep);
+  color:#fdf6e6;
+  cursor:pointer;
+  transition:background .15s ease, transform .1s ease;
+}
+button:hover{ background:var(--nile-mid); }
+button:active{ transform:scale(0.97); }
+.hint{
+  margin-top:12px;
+  font-size:13px;
+  color:#7a746a;
+}
+#status{
+  margin-top:16px;
+  font-size:14px;
+  color:var(--nile-mid);
+  text-align:center;
+  min-height:18px;
+}
+#results{
+  margin-top:22px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.result-card{
+  background:#fff;
+  border-radius:14px;
+  border:1px solid var(--papyrus-dark);
+  padding:18px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  animation:rise .25s ease;
+}
+@keyframes rise{
+  from{opacity:0; transform:translateY(6px);}
+  to{opacity:1; transform:translateY(0);}
+}
+.result-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+.r-name{
+  font-family:'Cairo', sans-serif;
+  font-weight:700;
+  font-size:18px;
+  color:var(--ink);
+}
+.r-seat{
+  font-size:13px;
+  color:#8a8272;
+  margin-top:2px;
+  direction:ltr;
+  text-align:right;
+}
+.badge{
+  font-family:'Cairo', sans-serif;
+  font-weight:700;
+  font-size:13px;
+  padding:6px 14px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.badge.pass{ background:var(--pass-bg); color:var(--pass); }
+.badge.fail{ background:var(--fail-bg); color:var(--fail); }
+.badge.absent{ background:var(--absent-bg); color:var(--absent); }
+.r-degree{
+  font-size:15px;
+  color:#4a5754;
+}
+.r-degree b{
+  font-family:'Cairo', sans-serif;
+  color:var(--nile-deep);
+  font-size:20px;
+}
+.more-note{
+  text-align:center;
+  font-size:13px;
+  color:#8a8272;
+  padding:6px 0;
+}
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#8a8272;
+  padding:24px 20px 36px;
+}
+footer .credit{
+  margin-top:6px;
+  font-family:'Cairo', sans-serif;
+  font-weight:700;
+  color:var(--nile-mid);
+  letter-spacing:0.3px;
+}
+@media (max-width:420px){
+  .input-row{ flex-direction:column; }
+  button{ width:100%; }
+}

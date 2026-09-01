@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدارس النيل الإخبارية — نتيجة الدور الثاني</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wave-top"></div>
+<header>
+  <div class="eyebrow">مدارس النيل الإخبارية</div>
+  <h1>بوابة نتيجة الدور الثاني</h1>
+  <p class="subtitle">اكتب رقم الجلوس أو اسم الطالب للاطلاع على النتيجة</p>
+</header>
+<main>
+  <div class="search-card">
+    <label for="q">رقم الجلوس أو الاسم</label>
+    <div class="input-row">
+      <input id="q" type="text" placeholder="مثال: 2011452 أو اسم الطالب" autocomplete="off">
+      <button id="go">بحث</button>
+    </div>
+    <div class="hint">يمكنك كتابة رقم الجلوس كاملًا لنتيجة فورية، أو جزء من الاسم لعرض كل المطابقات.</div>
+    <div id="status"></div>
+  </div>
+  <div id="results"></div>
+</main>
+<footer>
+  مدارس النيل الإخبارية — نتيجة الدور الثاني · البيانات لأغراض العرض فقط
+  <div class="credit">تصميم: أحمد محمد</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
